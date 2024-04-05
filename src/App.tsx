@@ -1,6 +1,6 @@
 import React from 'react'
 import FullFeaturedCrudGrid from './GridDemo'
-import { Box, Tab, Tabs } from '@mui/material'
+import { Tab, Tabs } from '@mui/material'
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -26,30 +26,38 @@ function CustomTabPanel(props: TabPanelProps) {
               </div>
             )}
         </div>
-    );
+    )
 }
 
 function App() {
-  const [tabValue, setTabValue] = React.useState(0);
+    const [tabValue, setTabValue] = React.useState(0);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-      setTabValue(newValue);
-  };
+    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+        setTabValue(newValue);
+    }
 
-  return (
-      <div style={{height: '100vh'}}>
-          <div style={{height: '100%'}}>
-              <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                  <Tabs value={tabValue} onChange={handleChange}>
-                      <Tab label="mytab1"/>
-                  </Tabs>
-              </Box>
-              <CustomTabPanel value={ tabValue } index={ 0 }>
-                  <FullFeaturedCrudGrid/>
-              </CustomTabPanel>
-          </div>
-      </div>
-  );
+    if (true) {
+        // Grid wrapped in tab
+        return (
+            <div style={{height: '100vh'}}>
+                <div style={{ borderBottom: 1, borderColor: 'divider' }}>
+                    <Tabs value={tabValue} onChange={handleChange}>
+                        <Tab label="mytab1"/>
+                    </Tabs>
+                </div>
+                <CustomTabPanel value={ tabValue } index={ 0 }>
+                    <FullFeaturedCrudGrid/>
+                </CustomTabPanel>
+            </div>
+        )
+    } else {
+        // No tab
+        return (
+            <div style={{height: '100vh'}}>
+                <FullFeaturedCrudGrid/>
+            </div>
+        )
+    }
 }
 
 export default App;
