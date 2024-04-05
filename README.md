@@ -1,2 +1,2 @@
 # mui-grid-footer-issue
-Demonstrate mui grid footer not visible when grid is a child of a mui tab
+The Mui grid footer overflows the page when the grid is a child of a Mui tab.
