@@ -39,7 +39,7 @@ function App() {
     if (true) {
         // Grid wrapped in tab
         return (
-            <div style={{height: '100vh'}}>
+            <div style={{height: '100vh', display: 'flex', flexDirection: 'column'}}>
                 <div style={{ borderBottom: 1, borderColor: 'divider' }}>
                     <Tabs value={tabValue} onChange={handleChange}>
                         <Tab label="mytab1"/>
